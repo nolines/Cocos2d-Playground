@@ -25,7 +25,9 @@ var MainLayer = cc.LayerColor.extend({
         }
 
         var player = cc.Sprite.create(s_player);
+        var bg = cc.Sprite.create(s_bg);
         player.setPosition(player.getContentSize().width / 2, winSize.height / 2);
+        this.addChild(bg);
         this.addChild(player);
 
         this.schedule(this.gameLogic, 3);
@@ -79,7 +81,7 @@ var MainLayer = cc.LayerColor.extend({
     locationTapped:function(location) {
         // Set up initial location of the projectile
         var projectile = cc.Sprite.create(s_projectile);
-        projectile.setPosition(20, winSize.height/2);
+        projectile.setPosition(125, winSize.height/2.5);
 
         // Determine offset of location to projectile
         var offset = cc.pSub(location, projectile.getPosition());
